@@ -18,11 +18,6 @@ public class ScreenshotRecorderM {
         NativeImage nativeimage = new NativeImage(i, j, false);
         GlTexture.bindTexture(target.getColorTextureId());
 
-        RenderPass renderPass = ((ExtendedRenderTarget)target).getRenderPass();
-
-        Renderer renderer = Renderer.getInstance();
-        boolean b = renderer.getBoundRenderPass() == renderPass;
-
         nativeimage.downloadTexture(0, true);
 
         nativeimage.flipY();
